@@ -46,12 +46,17 @@ namespace interfacek_ikt
             // implementation code
         }
 
-        public void Defend(int damage)
+        public void Defend(string type, int damage)
         {
             // implementation code
         }
 
-        public void OnHit(int damage) {
+		public void OnMove(string lenyomott)
+		{
+			// implementation code
+		}
+
+		public void OnHit(int damage) {
             if (Health - damage <= 0)
             {
                 Health = 0;
