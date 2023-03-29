@@ -8,7 +8,7 @@ namespace interfacek_ikt
 {
     interface ICurrentMap
     {
-        string MapName { get; set; }
+        string MapName { get; set;}
         string Description { get; set; }
         string[] Surroundings { get; set; }
         string[] NPCs { get; set; }

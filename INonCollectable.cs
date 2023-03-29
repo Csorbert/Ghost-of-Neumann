@@ -8,8 +8,8 @@ namespace interfacek_ikt
 {
     interface INonCollectable
     {
-        string Name { get; set; }
-        int Value { get; set; }
+        string Name { get;}
+        int Value { get;}
 
         // limitált (1) kollektálás
         void Collect(ICharacter collector);

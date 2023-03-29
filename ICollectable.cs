@@ -8,8 +8,8 @@ namespace interfacek_ikt
 {
     interface ICollectable
     {
-        string Name { get; set; }
-        int Value { get; set; }
+        string Name { get;}
+        int Value { get;}
 
         void Collect(ICharacter collector);
         void Interact(ICharacter user);

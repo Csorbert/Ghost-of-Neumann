@@ -8,9 +8,9 @@ namespace interfacek_ikt
 {
     interface IWeapon
     {
-        string Name { get; set; }
-        int AttackPower { get; set; }
-        int Durability { get; set; }
+        string Name { get;}
+        int AttackPower { get;}
+        int Durability { get;}
 
         void Attack(ICharacter target);
         void Repair();
