@@ -9,11 +9,11 @@ namespace interfacek_ikt
     interface IMagicItem
     {
         string Name { get; }
-        int ManaCost { get;}
-        string Type { get;}
-        double Effective { get;}
-        int Value { get;}
-        bool Stackable { get;}
+        int ManaCost { get; }
+        string Type { get; }
+        double Effective { get; }
+        int Value { get; }
+        bool Stackable { get; }
 
         void Use(ICharacter target);
         void Sell();

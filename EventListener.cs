@@ -8,13 +8,13 @@ namespace interfacek_ikt
 {
     interface ICurrentMap
     {
-        string MapName { get; set;}
-        string Description { get; set; }
-        string[] Surroundings { get; set; }
-        string[] NPCs { get; set; }
-        string[] Enemies { get; set; }
-        string[] Items { get; set; }
-        string[] Interactables { get; set; }
+        string MapName { get; }
+        string Description { get; }
+        string[] Surroundings { get; }
+        string[] NPCs { get; }
+        string[] Enemies { get; }
+        string[] Items { get; }
+        string[] Interactables { get; }
 
         void TeleportMap(ICurrentMap target);
         void OutOfBounds(ICurrentMap location);
@@ -31,15 +31,15 @@ namespace interfacek_ikt
 
     class Character : ICharacter
     {
-        public string Name { get; set; }
-        public int Level { get; set; }
-        public int Health { get; set; }
-        public int AttackPower { get; set; }
-        public int PhysicalDefense { get; set; }
-        public int MagicDefense { get; set; }
-        public int Kills { get; set; }
-        public int Death { get; set; }
-        public int Neukon { get; set; }
+        public string Name { get; }
+        public int Level { get; }
+        public int Health { get; }
+        public int AttackPower { get; }
+        public int PhysicalDefense { get; }
+        public int MagicDefense { get; }
+        public int Kills { get; }
+        public int Death { get; }
+        public int Neukon { get; }
 
         public void Attack(ICharacter target)
         {
@@ -51,21 +51,11 @@ namespace interfacek_ikt
             // implementation code
         }
 
-		public void OnMove(string lenyomott)
-		{
-			// implementation code
-		}
+        public void OnHit(int damage) {
 
-		public void OnHit(int damage) {
-            if (Health - damage <= 0)
-            {
-                Health = 0;
-                Death++;
-            } else
-            {
-                Health -= damage;
-            }
         }
+
+        public void OnMove(string lenyomott) { }
 
         public string Info()
         {

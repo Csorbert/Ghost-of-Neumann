@@ -24,14 +24,6 @@ namespace interfacek_ikt
             r.Close();
 
             Character k1 = new Character();
-            k1.Name = character[0];
-            k1.Level = int.Parse(character[1]);
-            k1.Health = int.Parse(character[2]);
-            k1.PhysicalDefense = int.Parse(character[3]);
-            k1.MagicDefense = int.Parse(character[4]);
-            k1.Kills = int.Parse(character[5]);
-            k1.Death = int.Parse(character[6]);
-            k1.Neukon = int.Parse(character[7]);
 
 
             Console.WriteLine(k1.Info());

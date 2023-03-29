@@ -8,15 +8,15 @@ namespace interfacek_ikt
 {
     interface ICharacter
     {
-        string Name { get;}
-        int Level { get;}
-        int Health { get;}
+        string Name { get; }
+        int Level { get; }
+        int Health { get; }
         int AttackPower { get; }
-        int PhysicalDefense { get;}
-        int MagicDefense { get;}
-        int Kills { get;}
+        int PhysicalDefense { get; }
+        int MagicDefense { get; }
+        int Kills { get; }
         int Death { get; }
-        int Neukon { get;}
+        int Neukon { get; }
 
         void Attack(ICharacter target);
         void Defend(string type, int damage);

@@ -8,11 +8,11 @@ namespace interfacek_ikt
 {
     interface IItems
     {
-        string Name { get;}
-        string Type { get;}
-        double Effective { get;}
-        int Value { get;}
-        bool Stackable { get;}
+        string Name { get; }
+        string Type { get; }
+        double Effective { get; }
+        int Value { get; }
+        bool Stackable { get; }
 
         void Use(ICharacter target);
         void Sell();
