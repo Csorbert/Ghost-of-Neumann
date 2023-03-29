@@ -1,0 +1,19 @@
+név;típus;hatékonyság;tartósság;stackable
+rodhadó szendvics;healelõ;85%;3;true
+energiaital;healelõ;75%;4;true
+nigro cukorkák;healelõ;50%;2;true
+kethetes tesicucc;pajzs;70%;3;true
+bizonyos kék póló;pajzs;50%;2;true
+elvbar;fegyver(vegyi);60%;3;true
+poroltó;fegyver(vegyi);80%;4;true
+kolis kés;fegyver(szúró);90%;2;true
+egyetemes kréta;fegyver(szúró);50%;3;true
+kigyulladt vezetékek;fegyver(elektromos);80%;2;true
+shopból egy fullos életerõ regen (max 1x);healelõ;100%;5;false
+nuggers csokiszelet;healelõ;20%;1;false
+2 támadásig felvehetõ mitzi magic álarc (csábító hatású);pajzs;70%;2;false
+H&N-es pulóver;pajzs;30%;1;false
+gázálarc;fegyver(vegyi);90%;4;false
+dior sauvage parfüm;fegyver(vegyi);40%;2;false
+billentyûzet;fegyver(szúró);10%;1;false
+Dméter Attila Rispberry Pi;fegyver(elektromos);60%;3;false

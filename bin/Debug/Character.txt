@@ -1,0 +1,9 @@
+nev;Name
+szint;1
+eletero;100
+sebzes;43
+fizikaivedelem;14
+magikusvedelem;6
+gyilkossagok;0
+halalok;0
+neukon;0
