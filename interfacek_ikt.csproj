@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attack.cs" />
     <Compile Include="EventListener.cs" />
     <Compile Include="ICharacter.cs" />
     <Compile Include="ICollectable.cs" />
