@@ -10,7 +10,7 @@ namespace interfacek_ikt
     {
         string Name { get; }
         int Level { get; }
-        int Health { get; }
+        int Health { get; set; }
         int AttackPower { get; }
         int PhysicalDefense { get; }
         int MagicDefense { get; }
@@ -21,6 +21,7 @@ namespace interfacek_ikt
         void Attack(ICharacter target);
         void Defend(string type, int damage);
         void OnHit(int damage);
+
         void OnMove(string lenyomott);
     }
 

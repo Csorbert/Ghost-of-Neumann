@@ -57,9 +57,9 @@ namespace interfacek_ikt
         {
             Console.WriteLine($"Megsebezted {target} a következőt használva: {itemUsed}");
 
-            // valós számítások később megoldva
-
-            target.OnHit(1);
+            int dealt = itemUsed.AttackPower - (itemUsed.AttackPower / 100 * target.PhysicalDefense);
+            target.OnHit(dealt);
+            itemUsed.Durability -= 1;
 
             // egyéb kód ide
         }
@@ -71,9 +71,9 @@ namespace interfacek_ikt
         {
             Console.WriteLine($"Megsebezted {target} a következőt használva: {itemUsed}");
 
-            // valós számítások később megoldva
-
-            target.OnHit(1);
+            int dealt = itemUsed.AttackPower - (itemUsed.AttackPower/100*target.MagicDefense);
+            target.OnHit(dealt);
+            itemUsed.Durability -= 1;
 
             // egyéb kód ide
         }

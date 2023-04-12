@@ -44,11 +44,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attack.cs" />
+    <Compile Include="Character.cs" />
     <Compile Include="EventListener.cs" />
     <Compile Include="ICharacter.cs" />
     <Compile Include="ICollectable.cs" />
     <Compile Include="IItems.cs" />
     <Compile Include="IMagicItem.cs" />
+    <Compile Include="IMap.cs" />
     <Compile Include="INonCollectable.cs" />
     <Compile Include="IWeapon.cs" />
     <Compile Include="Program.cs" />
