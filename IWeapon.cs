@@ -14,6 +14,8 @@ namespace interfacek_ikt
         int AttackPower { get; }
         int Durability { get; set; }
 
+        bool Repaired { get; set; }
+
         void Attack(ICharacter target);
         void Repair();
         void Use(ICharacter target);
