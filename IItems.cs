@@ -14,7 +14,9 @@ namespace interfacek_ikt
         int Value { get; }
         bool Stackable { get; }
 
+        int Darab { get; }
+
         void Use(ICharacter target);
-        void Sell();
+        void Sell(int cost);
     }
 }
