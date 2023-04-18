@@ -11,8 +11,7 @@ namespace interfacek_ikt
         public string Name { get; }
 
         enum  type{
-
-            phisical, magical
+            physical, magical
         }
         public string Type { get; }
 

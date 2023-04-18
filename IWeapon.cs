@@ -9,8 +9,6 @@ namespace interfacek_ikt
     interface IWeapon
     {
 
-
-
         string Name { get; }
         string Type { get; }
         int AttackPower { get; }

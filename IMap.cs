@@ -8,8 +8,12 @@ namespace interfacek_ikt
 {
     interface ICurrentMap
     {
+        string FileName { get; }
         string MapName { get; }
         string Description { get; }
+        string[,] Teleport { get; }
+        string Destination { get; }
+        string[,] StoreMap { get; }
         string[] Surroundings { get; }
         string[] NPCs { get; }
         string[] Enemies { get; }

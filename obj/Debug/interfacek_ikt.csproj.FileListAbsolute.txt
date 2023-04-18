@@ -5,3 +5,10 @@ C:\Users\norbe\Desktop\interfacek_ikt\obj\Debug\interfacek_ikt.csproj.AssemblyRe
 C:\Users\norbe\Desktop\interfacek_ikt\obj\Debug\interfacek_ikt.csproj.CoreCompileInputs.cache
 C:\Users\norbe\Desktop\interfacek_ikt\obj\Debug\interfacek_ikt.exe
 C:\Users\norbe\Desktop\interfacek_ikt\obj\Debug\interfacek_ikt.pdb
+C:\Users\norbe\Desktop\Ghost-of-Neumann\bin\Debug\interfacek_ikt.exe.config
+C:\Users\norbe\Desktop\Ghost-of-Neumann\bin\Debug\interfacek_ikt.exe
+C:\Users\norbe\Desktop\Ghost-of-Neumann\bin\Debug\interfacek_ikt.pdb
+C:\Users\norbe\Desktop\Ghost-of-Neumann\obj\Debug\interfacek_ikt.csproj.AssemblyReference.cache
+C:\Users\norbe\Desktop\Ghost-of-Neumann\obj\Debug\interfacek_ikt.csproj.CoreCompileInputs.cache
+C:\Users\norbe\Desktop\Ghost-of-Neumann\obj\Debug\interfacek_ikt.exe
+C:\Users\norbe\Desktop\Ghost-of-Neumann\obj\Debug\interfacek_ikt.pdb
