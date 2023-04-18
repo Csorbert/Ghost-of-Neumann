@@ -18,7 +18,7 @@ namespace interfacek_ikt
 
         public int AttackPower { get; }
 
-        public bool Repaired { get; }
+        public bool Repaired { get; set; }
 
         private int durability;
         
@@ -30,6 +30,7 @@ namespace interfacek_ikt
                 if(durability < 20 && !Repaired)
                 {
                     Repair();
+                    Repaired = true;
                 }
                 else
                 {
