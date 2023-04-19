@@ -14,14 +14,16 @@ namespace interfacek_ikt
         string[,] Teleport { get; }
         string Destination { get; }
         string[,] StoreMap { get; }
+        int[] Player { get; }
         string[] Surroundings { get; }
         string[] NPCs { get; }
         string[] Enemies { get; }
         string[] Items { get; }
         string[] Interactables { get; }
-
+        
+        void Move(char c);
+        void DisplayMap();
         void TeleportMap(ICurrentMap target);
         void OutOfBounds(ICurrentMap location);
-        void DisplayMap(ICurrentMap map);
     }
 }
