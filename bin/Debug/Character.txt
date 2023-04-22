@@ -1,4 +1,4 @@
-nev;Name
+nev;statok
 szint;1
 eletero;100
 sebzes;43

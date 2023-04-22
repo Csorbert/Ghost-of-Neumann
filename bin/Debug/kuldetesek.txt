@@ -1,0 +1,10 @@
+Leírás,Tpszerzes,Mennyivan,Mennyikell,Teljesitve
+Ölj meg három szörnyet,150,0,3,false
+Ölj meg egy 1. szintű szörnyet,40,0,1,false
+Védj ki egy támadást,60,0,1,false
+Menj be 2 szobába,20,0,2,false
+Öld meg a bosst,200,0,1,false
+Vásárolj 2 tárgyat,100,0,2,false
+Beszélgess 3 NPC-vel,70,0,3,false
+Éledj újra a játékba,300,0,1,false
+Találj 5 tárgyat,140,0,5,false
