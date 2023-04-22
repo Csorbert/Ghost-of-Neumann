@@ -4,7 +4,6 @@ energiaital;healelõ;75%;4;true
 nigro cukorkák;healelõ;50%;2;true
 kéthetes tesicucc;pajzs;70%;3;true
 kék póló;pajzs;50%;2;true
-elvbar;fegyver;60%;3;true
 poroltó;fegyver;80%;4;true
 kolis kés;fegyver;90%;2;true
 egyetemes kréta;fegyver;50%;3;true
