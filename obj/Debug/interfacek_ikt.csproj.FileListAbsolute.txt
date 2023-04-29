@@ -26,3 +26,10 @@ E:\Ghost-of-Neumann\obj\Debug\interfacek_ikt.csproj.AssemblyReference.cache
 E:\Ghost-of-Neumann\obj\Debug\interfacek_ikt.csproj.CoreCompileInputs.cache
 E:\Ghost-of-Neumann\obj\Debug\interfacek_ikt.exe
 E:\Ghost-of-Neumann\obj\Debug\interfacek_ikt.pdb
+C:\Users\lukac\Desktop\progi\ikt projekt\Ghost-of-Neumann\bin\Debug\interfacek_ikt.exe.config
+C:\Users\lukac\Desktop\progi\ikt projekt\Ghost-of-Neumann\bin\Debug\interfacek_ikt.exe
+C:\Users\lukac\Desktop\progi\ikt projekt\Ghost-of-Neumann\bin\Debug\interfacek_ikt.pdb
+C:\Users\lukac\Desktop\progi\ikt projekt\Ghost-of-Neumann\obj\Debug\interfacek_ikt.csproj.AssemblyReference.cache
+C:\Users\lukac\Desktop\progi\ikt projekt\Ghost-of-Neumann\obj\Debug\interfacek_ikt.csproj.CoreCompileInputs.cache
+C:\Users\lukac\Desktop\progi\ikt projekt\Ghost-of-Neumann\obj\Debug\interfacek_ikt.exe
+C:\Users\lukac\Desktop\progi\ikt projekt\Ghost-of-Neumann\obj\Debug\interfacek_ikt.pdb
