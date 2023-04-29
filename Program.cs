@@ -9,10 +9,13 @@ namespace interfacek_ikt
 {
     class Program
     {
+        static Statistics statsCounter = new Statistics();
+
         static void Main(string[] args)
         {
 
             Map aula = new Map("aula.txt");
+
 
             Console.WriteLine("Press a button to start");
 
@@ -20,6 +23,9 @@ namespace interfacek_ikt
             {
                 char c = Console.ReadKey().KeyChar;
                 aula.Move(c);
+
+                //statsCounter.StoreStatistics("step", 1);
+               //statsCounter.DisplayStats(statsCounter.NumberOfKills, statsCounter.ExperiencePoints, statsCounter.ExperiencePoints, statsCounter.NumberOfKills);
             }
 
         }

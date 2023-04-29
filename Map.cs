@@ -103,6 +103,8 @@ namespace interfacek_ikt
                 default:
                     break;
             }
+
+            
             Console.Clear();
             DisplayMap();
         }
