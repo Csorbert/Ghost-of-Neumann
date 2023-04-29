@@ -8,11 +8,11 @@ namespace interfacek_ikt
 {
     interface IStatistics
     {
-        int numberOfKills { get; }
-        int experiencePoints { get; }
-        int numberOfStepsTaken { get; }
-        int itemsCollected { get; }
-        bool isGameFinished { get; }
+        int NumberOfKills { get; }
+        int ExperiencePoints { get; }
+        int NumberOfStepsTaken { get; }
+        int ItemsCollected { get; }
+        bool IsGameFinished { get; }
 
         void StoreStatistics(string typeOfStatistics, int valuePipeLine);
 

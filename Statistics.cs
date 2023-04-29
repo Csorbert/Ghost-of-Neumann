@@ -8,72 +8,34 @@ namespace interfacek_ikt
 {
     class Statistics : IStatistics
     {
-        private int numberOfKills;
-        private int experiencePoints;
-        private int numberOfStepsTaken;
-        private int itemsCollected;
-        private bool isGameFinished;
-
-        int IStatistics.numberOfKills { get; }
-
-        int IStatistics.experiencePoints { get; }
-
-        int IStatistics.numberOfStepsTaken { get; }
-
-        int IStatistics.itemsCollected { get; }
-
-        bool IStatistics.isGameFinished { get; }
 
 
-        public int NumberOfKills
-        {
-            get { return numberOfKills; }
-            private set { numberOfKills = value; }
-        }
+        public int NumberOfKills { get; set; }
 
-        public int ExperiencePoints
-        {
-            get { return experiencePoints; }
-            private set { experiencePoints = value; }
-        }
+        public int ExperiencePoints { get; set; }
 
-        public int NumberOfStepsTaken
-        {
-            get { return numberOfStepsTaken; }
-            private set { numberOfStepsTaken = value; }
-        }
+        public int NumberOfStepsTaken { get; set; }
 
-        public int ItemsCollected
-        {
-            get { return itemsCollected; }
-            private set { itemsCollected = value; }
-        }
+        public int ItemsCollected { get; set; }
 
-        public bool IsGameFinished
-        {
-            get { return isGameFinished; }
-            private set { isGameFinished = value; }
+        public bool IsGameFinished { get; set; }
 
-
-        }
-
-        
 
         public void StoreStatistics(string typeOfStatistics, int valuePipeLine)
         {
             switch (typeOfStatistics)
             {
                 case "kill":
-                    numberOfKills += 1;
+                    NumberOfKills += 1;
                     break;
                 case "xp":
-                    experiencePoints += valuePipeLine;
+                    ExperiencePoints += valuePipeLine;
                     break;
                 case "step":
-                    numberOfStepsTaken += 1;
+                    NumberOfStepsTaken += 1;
                     break;
                 case "collect":
-                    itemsCollected += 1;
+                    ItemsCollected += 1;
                     break;
 
                 default:
@@ -84,7 +46,7 @@ namespace interfacek_ikt
 
         public void DisplayStats(int kills, int experience, int steps, int itemsCollected)
         {
-            Console.WriteLine("Statistics:");
+            Console.WriteLine("\nStatistics:");
             Console.WriteLine($"Number of kills: {kills}");
             Console.WriteLine($"Experience points: {experience}");
             Console.WriteLine($"Number of steps taken: {steps}");
@@ -94,8 +56,8 @@ namespace interfacek_ikt
         public Statistics()
         {
             NumberOfKills = 0;
-            experiencePoints = 0;
-            numberOfStepsTaken = 0;
+            ExperiencePoints = 0;
+            NumberOfStepsTaken = 0;
             ItemsCollected = 0;
         }
 

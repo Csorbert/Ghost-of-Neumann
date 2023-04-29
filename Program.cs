@@ -24,8 +24,8 @@ namespace interfacek_ikt
                 char c = Console.ReadKey().KeyChar;
                 aula.Move(c);
 
-                //statsCounter.StoreStatistics("step", 1);
-               //statsCounter.DisplayStats(statsCounter.NumberOfKills, statsCounter.ExperiencePoints, statsCounter.ExperiencePoints, statsCounter.NumberOfKills);
+                statsCounter.StoreStatistics("step", 1);
+                statsCounter.DisplayStats(statsCounter.NumberOfKills, statsCounter.ExperiencePoints, statsCounter.NumberOfStepsTaken, statsCounter.ItemsCollected);
             }
 
         }
