@@ -15,9 +15,9 @@ namespace interfacek_ikt
 
         public string Description { get; }
 
-        public string[,] Teleport { get; }
+        public Dictionary<string, List<string>> Teleports { get; }
 
-        public string Destination { get; }
+        public List<string> Coords { get; }
 
         public string[,] StoreMap { get; }
 
@@ -33,28 +33,57 @@ namespace interfacek_ikt
 
         public string[] Interactables => throw new NotImplementedException();
 
-        public Map(string txtname)
+        public Map(string txtname, int xdata, int ydata)
         {
+            Teleports = new Dictionary<string, List<string>>();
+            Coords = new List<string>();
+
             StreamReader r = new StreamReader(txtname, Encoding.UTF8);
             string filename = r.ReadLine().Split(';')[1];
             string mapname = r.ReadLine().Split(';')[1];
             string desc = r.ReadLine().Split(';')[1];
-            string tp = r.ReadLine().Split(';')[1];
-            string[,] ftp = new string[2, 2];
-            int[] player = { 40, 12 };
 
-            int permay = 0;
-            foreach (var item in tp.Split('#'))
+            int[] player = { xdata, ydata };
+
+
+            string[] dest = r.ReadLine().Split(';')[1].Split('|');
+            List<string> mapnames = new List<string>();
+            foreach (var destination in dest)
             {
-                int x = 0;
-                foreach (var item2 in item.Split(','))
-                {
-                    ftp[permay, x] = item2;
-                    x++;
-                }
+                mapnames.Add(destination);
             }
 
-            string dest = r.ReadLine().Split(';')[1];
+
+            string[] tp = r.ReadLine().Split(';')[1].Split('|');
+            int mapnumber = 0;
+            foreach (var teleport in tp)
+            {
+                List<string> ftp = new List<string>();
+                string[] hashtagcoords = teleport.Split('#');
+                foreach (var item in hashtagcoords)
+                {
+                    string[] modifieditem = item.Split(',');
+                    if (item.Contains("-"))
+                    {
+                        string[] sorozat = modifieditem[1].Split('-');
+                        for (int i = int.Parse(sorozat[0]); i <= int.Parse(sorozat[1]); i++)
+                        {
+                            string final = $"{modifieditem[0]},{i}";
+                            ftp.Add(final);
+                            Coords.Add(final);
+                        }
+                    } else
+                    {
+                        ftp.Add($"{modifieditem[0]},{modifieditem[1]}");
+                        Coords.Add($"{modifieditem[0]},{modifieditem[1]}");
+                    }
+                }
+
+                Teleports.Add(mapnames[mapnumber], ftp);
+            }
+
+
+
             string[,] storemap = new string[25, 80];
 
             for (int y = 0; y < 25; y++)
@@ -66,11 +95,11 @@ namespace interfacek_ikt
                 }
             }
 
+
+
             FileName = filename;
             MapName = mapname;
             Description = desc;
-            Teleport = ftp;
-            Destination = dest;
             StoreMap = storemap;
             Player = player;
 
@@ -79,6 +108,7 @@ namespace interfacek_ikt
 
         public Map()
         {
+
         }
 
         public void Move(char c)
@@ -104,9 +134,44 @@ namespace interfacek_ikt
                     break;
             }
 
-            
-            Console.Clear();
-            DisplayMap();
+            string coord = $"{Player[1]+1},{Player[0]+1}";
+
+            if (Coords.Contains(coord))
+            {
+                foreach (var item in Teleports)
+                {
+                    if (item.Value.Contains(coord))
+                    {
+                        switch (Player[1])
+                        {
+                            case 0:
+                                Program.current = new Map(item.Key, Player[0], 23);
+                                break;
+                            case 24:
+                                Program.current = new Map(item.Key, Player[0], 1);
+                                break;
+                        }
+
+                        switch (Player[0])
+                        {
+                            case 0:
+                                Program.current = new Map(item.Key, 78, Player[1]);
+                                break;
+                            case 79:
+                                Program.current = new Map(item.Key, 1, Player[1]);
+                                break;
+                        }
+
+                        Console.Clear();
+                        Program.current.DisplayMap();
+                        break;
+                    }
+                }
+            } else
+            {
+                Console.Clear();
+                DisplayMap();
+            }
         }
 
         public void DisplayMap()

@@ -11,18 +11,19 @@ namespace interfacek_ikt
     {
         static Statistics statsCounter = new Statistics();
 
+        public static Map current;
+
         static void Main(string[] args)
         {
 
-            Map aula = new Map("aula.txt");
-
+            current = new Map("aula.txt", 40, 12);
 
             Console.WriteLine("Press a button to start");
 
             while (true)
             {
                 char c = Console.ReadKey().KeyChar;
-                aula.Move(c);
+                current.Move(c);
 
                 statsCounter.StoreStatistics("step", 1);
                 statsCounter.DisplayStats(statsCounter.NumberOfKills, statsCounter.ExperiencePoints, statsCounter.NumberOfStepsTaken, statsCounter.ItemsCollected);

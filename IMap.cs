@@ -11,8 +11,8 @@ namespace interfacek_ikt
         string FileName { get; }
         string MapName { get; }
         string Description { get; }
-        string[,] Teleport { get; }
-        string Destination { get; }
+        Dictionary<string, List<string>> Teleports { get; }
+        List<string> Coords { get; }
         string[,] StoreMap { get; }
         int[] Player { get; }
         string[] Surroundings { get; }

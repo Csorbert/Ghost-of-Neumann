@@ -11,5 +11,10 @@ namespace interfacek_ikt
 
         // Ide jönnek majd a listenerek
 
+        public void QuickTimeAction(double time)
+        {
+
+        }
+
     }
 }
