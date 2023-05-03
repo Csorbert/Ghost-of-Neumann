@@ -19,6 +19,8 @@ namespace interfacek_ikt
 
         public List<string> Coords { get; }
 
+        public List<string> QTACoords { get; }
+
         public string[,] StoreMap { get; }
 
         public int[] Player { get; private set; }
@@ -41,8 +43,10 @@ namespace interfacek_ikt
         {
             Teleports = new Dictionary<string, List<string>>();
             Coords = new List<string>();
+            QTACoords = new List<string>();
             OOB = new List<char> { '╔', '╗', '╝', '╚' , '╩' , '╣', '╠' , '║', '═' };
 
+            // Start reading map
 
             StreamReader r = new StreamReader(txtname, Encoding.UTF8);
             string filename = r.ReadLine().Split(';')[1];
@@ -51,6 +55,7 @@ namespace interfacek_ikt
 
             int[] player = { xdata, ydata };
 
+            // Map names to teleport to
 
             string[] dest = r.ReadLine().Split(';')[1].Split('|');
             List<string> mapnames = new List<string>();
@@ -59,6 +64,7 @@ namespace interfacek_ikt
                 mapnames.Add(destination);
             }
 
+            // Store teleports coords accordingly
 
             string[] tp = r.ReadLine().Split(';')[1].Split('|');
             int mapnumber = 0;
@@ -100,6 +106,21 @@ namespace interfacek_ikt
                     storemap[y, x] = sor[x].ToString();
                 }
             }
+
+            // Random QTA
+
+            Random rng = new Random();
+            int qtax = rng.Next(0, 80);
+            int qtay = rng.Next(0, 25);
+            while (storemap[qtay,qtax] != " ")
+            {
+                qtax = rng.Next(0, 80);
+                qtay = rng.Next(0, 25);
+            }
+            QTACoords.Add($"{qtax},{qtay}");
+            storemap[qtay, qtax] = "╳";
+
+            // Set values
 
             FileName = filename;
             MapName = mapname;
@@ -181,7 +202,11 @@ namespace interfacek_ikt
                         break;
                     }
                 }
-            } else
+            } else if (QTACoords.Contains(coord))
+            {
+                Program.eventListener.QuickTimeAction();
+            }
+            else
             {
                 // Check for OOB
 

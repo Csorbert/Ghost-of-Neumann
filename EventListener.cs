@@ -6,14 +6,16 @@ using System.Threading.Tasks;
 
 namespace interfacek_ikt
 {
-    class EventListener
+    public class EventListener
     {
 
         // Ide jönnek majd a listenerek
 
-        public void QuickTimeAction(double time)
+        public void QuickTimeAction()
         {
-
+            Random rnd = new Random();
+            double time = rnd.NextDouble()*(1.5-0.5)+0.5;
+            Console.WriteLine(time);
         }
 
     }

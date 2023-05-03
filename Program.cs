@@ -13,8 +13,12 @@ namespace interfacek_ikt
 
         public static Map current;
 
+        public static EventListener eventListener = new EventListener();
+
         static void Main(string[] args)
         {
+
+            Console.OutputEncoding = Encoding.UTF8;
 
             // Initial map load
 
@@ -35,6 +39,8 @@ namespace interfacek_ikt
 
             statsCounter.StoreStatistics("step", 1);
             statsCounter.DisplayStats(statsCounter.NumberOfKills, statsCounter.ExperiencePoints, statsCounter.NumberOfStepsTaken, statsCounter.ItemsCollected);
+
+            // Console.WriteLine(current.QTACoords);
 
             while (true)
             {
