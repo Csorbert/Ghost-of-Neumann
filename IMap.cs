@@ -25,6 +25,7 @@ namespace interfacek_ikt
 
         void Move(char c);
         void DisplayMap();
+        void Update(string fromloc, string toloc);
         void OutOfBounds(string fromloc, string toloc);
     }
 }

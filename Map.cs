@@ -88,7 +88,7 @@ namespace interfacek_ikt
                 Teleports.Add(mapnames[mapnumber], ftp);
             }
 
-
+            // Storing the map in matrix
 
             string[,] storemap = new string[25, 80];
 
@@ -100,8 +100,6 @@ namespace interfacek_ikt
                     storemap[y, x] = sor[x].ToString();
                 }
             }
-
-
 
             FileName = filename;
             MapName = mapname;
@@ -120,6 +118,8 @@ namespace interfacek_ikt
         public void Move(char c)
         {
             string original = $"{Player[0]},{Player[1]}";
+
+            // Move player
 
             switch (c) {
                 case 'w':
@@ -143,6 +143,8 @@ namespace interfacek_ikt
             }
 
             string modified = $"{Player[0]},{Player[1]}";
+
+            // If player coord is teleport
 
             string coord = $"{Player[1]+1},{Player[0]+1}";
 
@@ -174,35 +176,58 @@ namespace interfacek_ikt
 
                         Console.Clear();
                         Program.current.DisplayMap();
+                        modified = $"{Program.current.Player[0]},{Program.current.Player[1]}";
+                        Program.current.Update(original, modified);
                         break;
                     }
                 }
             } else
             {
+                // Check for OOB
+
                 OutOfBounds(original, modified);
 
-                Console.Clear();
-                DisplayMap();
+                // Update player pos
+
+                modified = $"{Player[0]},{Player[1]}";
+                Update(original, modified);
             }
         }
 
         public void DisplayMap()
         {
+            Console.Clear();
+
             for (int y = 0; y < 25; y++)
             {
                 Console.WriteLine();
                 for (int x = 0; x < 80; x++)
                 {
-                    if (x == Player[0] && y == Player[1])
-                    {
-                        Console.Write("X");
-                    }
-                    else
-                    {
-                        Console.Write(StoreMap[y, x]);
-                    }
+                    Console.Write(StoreMap[y, x]);
                 }
             }
+        }
+
+        public void Update(string fromloc, string toloc)
+        {
+            string[] from = fromloc.Split(',');
+            int[] fromnum = { int.Parse(from[0]), int.Parse(from[1]) };
+
+            string[] to = toloc.Split(',');
+            int[] tonum = { int.Parse(to[0]), int.Parse(to[1]) };
+
+            int y = Console.CursorTop;
+
+            Console.SetCursorPosition(tonum[0],tonum[1]+1);
+            Console.Write("X");
+
+            if (fromloc != toloc)
+            {
+                Console.SetCursorPosition(fromnum[0], fromnum[1] + 1);
+                Console.Write(StoreMap[fromnum[1], fromnum[0]]);
+            }
+
+            Console.SetCursorPosition(0, 25);
         }
 
         public void OutOfBounds(string fromloc, string toloc)
