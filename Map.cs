@@ -33,10 +33,16 @@ namespace interfacek_ikt
 
         public string[] Interactables => throw new NotImplementedException();
 
+
+        public List<char> OOB { get; }
+
+
         public Map(string txtname, int xdata, int ydata)
         {
             Teleports = new Dictionary<string, List<string>>();
             Coords = new List<string>();
+            OOB = new List<char> { '╔', '╗', '╝', '╚' , '╩' , '╣', '╠' , '║', '═' };
+
 
             StreamReader r = new StreamReader(txtname, Encoding.UTF8);
             string filename = r.ReadLine().Split(';')[1];
@@ -113,6 +119,8 @@ namespace interfacek_ikt
 
         public void Move(char c)
         {
+            string original = $"{Player[0]},{Player[1]}";
+
             switch (c) {
                 case 'w':
                 case 'W':
@@ -133,6 +141,8 @@ namespace interfacek_ikt
                 default:
                     break;
             }
+
+            string modified = $"{Player[0]},{Player[1]}";
 
             string coord = $"{Player[1]+1},{Player[0]+1}";
 
@@ -169,6 +179,8 @@ namespace interfacek_ikt
                 }
             } else
             {
+                OutOfBounds(original, modified);
+
                 Console.Clear();
                 DisplayMap();
             }
@@ -193,14 +205,18 @@ namespace interfacek_ikt
             }
         }
 
-        public void OutOfBounds(ICurrentMap location)
+        public void OutOfBounds(string fromloc, string toloc)
         {
-            throw new NotImplementedException();
-        }
+            string[] from = fromloc.Split(',');
+            int[] fromnum = { int.Parse(from[0]), int.Parse(from[1]) };
 
-        public void TeleportMap(ICurrentMap target)
-        {
-            throw new NotImplementedException();
+            string[] to = toloc.Split(',');
+            int[] tonum = { int.Parse(to[0]), int.Parse(to[1]) };
+
+            if (OOB.Contains(char.Parse(StoreMap[tonum[1], tonum[0]])))
+            {
+                Player = new int[2] { fromnum[0], fromnum[1] };
+            }
         }
     }
 }

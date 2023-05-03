@@ -20,10 +20,11 @@ namespace interfacek_ikt
         string[] Enemies { get; }
         string[] Items { get; }
         string[] Interactables { get; }
-        
+
+        List<char> OOB { get; }
+
         void Move(char c);
         void DisplayMap();
-        void TeleportMap(ICurrentMap target);
-        void OutOfBounds(ICurrentMap location);
+        void OutOfBounds(string fromloc, string toloc);
     }
 }
