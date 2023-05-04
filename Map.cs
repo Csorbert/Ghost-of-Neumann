@@ -117,7 +117,7 @@ namespace interfacek_ikt
                 qtax = rng.Next(0, 80);
                 qtay = rng.Next(0, 25);
             }
-            QTACoords.Add($"{qtax},{qtay}");
+            QTACoords.Add($"{qtay+1},{qtax+1}");
             storemap[qtay, qtax] = "╳";
 
             // Set values
@@ -204,6 +204,8 @@ namespace interfacek_ikt
                 }
             } else if (QTACoords.Contains(coord))
             {
+                Update(original, modified);
+
                 Program.eventListener.QuickTimeAction();
             }
             else
@@ -215,6 +217,7 @@ namespace interfacek_ikt
                 // Update player pos
 
                 modified = $"{Player[0]},{Player[1]}";
+
                 Update(original, modified);
             }
         }

@@ -24,6 +24,10 @@ namespace interfacek_ikt
 
             current = new Map("aula.txt", 40, 12);
 
+            // Initial QTA load
+
+            eventListener.CreateAlphabet();
+
             // Wait for press
 
             Console.WriteLine("Press Alt + Enter to avoid bugs!\n");
@@ -31,24 +35,26 @@ namespace interfacek_ikt
             Console.ReadKey();
             Console.Clear();
 
+            Console.CursorVisible = false;
+
             // First map display and set player
 
             current.DisplayMap();
             string pos = $"{current.Player[0]},{current.Player[1]}";
             current.Update(pos, pos);
 
-            statsCounter.StoreStatistics("step", 1);
-            statsCounter.DisplayStats(statsCounter.NumberOfKills, statsCounter.ExperiencePoints, statsCounter.NumberOfStepsTaken, statsCounter.ItemsCollected);
+            // statsCounter.StoreStatistics("step", 1);
+            // statsCounter.DisplayStats(statsCounter.NumberOfKills, statsCounter.ExperiencePoints, statsCounter.NumberOfStepsTaken, statsCounter.ItemsCollected);
 
             // Console.WriteLine(current.QTACoords);
 
             while (true)
             {
-                char c = Console.ReadKey().KeyChar;
+                char c = Console.ReadKey(true).KeyChar;
                 current.Move(c);
 
-                statsCounter.StoreStatistics("step", 1);
-                statsCounter.DisplayStats(statsCounter.NumberOfKills, statsCounter.ExperiencePoints, statsCounter.NumberOfStepsTaken, statsCounter.ItemsCollected);
+                // statsCounter.StoreStatistics("step", 1);
+                // statsCounter.DisplayStats(statsCounter.NumberOfKills, statsCounter.ExperiencePoints, statsCounter.NumberOfStepsTaken, statsCounter.ItemsCollected);
             }
 
         }
