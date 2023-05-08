@@ -15,6 +15,8 @@ namespace interfacek_ikt
 
         public static EventListener eventListener = new EventListener();
 
+        public static Dictionary<string, Map> mapList = new Dictionary<string, Map>();
+
         static void Main(string[] args)
         {
 
@@ -23,6 +25,8 @@ namespace interfacek_ikt
             // Initial map load
 
             current = new Map("aula.txt", 40, 12);
+
+            mapList.Add(current.FileName, current);
 
             // Initial QTA load
 

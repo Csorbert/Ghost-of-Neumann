@@ -38,13 +38,13 @@ namespace interfacek_ikt
 
             CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
             Task<string> task = Task.Run(() => WaitForInput(cancellationTokenSource.Token, timeReamining));
-            if (!task.Wait(timeToWait))
+            if (!task.Wait(timeToWait)) // Ran out of time
             {
                 string message = $"Fail";
                 Console.Write($"{message}{new string(' ', Console.WindowWidth - message.Length)}");
                 cancellationTokenSource.Cancel();
             }
-            else
+            else  // Pressed something in time
             {
                 if (character == task.Result.ToCharArray()[0])
                 {
@@ -60,6 +60,8 @@ namespace interfacek_ikt
 
         static string WaitForInput(CancellationToken cancellationToken, int timeToWait)
         {
+            // CSIRIBÚ CSIRIBÁ
+
             StringBuilder sb = new StringBuilder();
             Stopwatch stopwatch = Stopwatch.StartNew();
             while (!cancellationToken.IsCancellationRequested && stopwatch.ElapsedMilliseconds < timeToWait)

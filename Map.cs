@@ -175,30 +175,53 @@ namespace interfacek_ikt
                 {
                     if (item.Value.Contains(coord))
                     {
+
+                        // Decide where to place the player
+                        int[] tocoord = new int[2];
                         switch (Player[1])
                         {
                             case 0:
-                                Program.current = new Map(item.Key, Player[0], 23);
+                                tocoord = new int[] { Player[0], 23 };
                                 break;
                             case 24:
-                                Program.current = new Map(item.Key, Player[0], 1);
+                                tocoord = new int[] { Player[0], 1 };
                                 break;
                         }
-
                         switch (Player[0])
                         {
                             case 0:
-                                Program.current = new Map(item.Key, 78, Player[1]);
+                                tocoord = new int[] { 78, Player[1] };
                                 break;
                             case 79:
-                                Program.current = new Map(item.Key, 1, Player[1]);
+                                tocoord = new int[] { 1, Player[1] };
                                 break;
+                        }
+
+                        if (Program.mapList.ContainsKey(item.Key))
+                        {
+                            // If map exists
+
+                            Program.current = Program.mapList[item.Key];
+
+                            modified = $"{tocoord[0]},{tocoord[1]}";
+
+                            Program.current.Player[0] = tocoord[0];
+                            Program.current.Player[1] = tocoord[1];
+                        } else
+                        {
+                            // If map does not exist
+
+                            Program.current = new Map(item.Key, tocoord[0], tocoord[1]);
+
+                            Program.mapList.Add(item.Key, Program.current);
+
+                            modified = $"{Program.current.Player[0]},{Program.current.Player[1]}";
                         }
 
                         Console.Clear();
                         Program.current.DisplayMap();
-                        modified = $"{Program.current.Player[0]},{Program.current.Player[1]}";
                         Program.current.Update(original, modified);
+
                         break;
                     }
                 }
