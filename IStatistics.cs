@@ -12,11 +12,14 @@ namespace interfacek_ikt
         int ExperiencePoints { get; }
         int NumberOfStepsTaken { get; }
         int ItemsCollected { get; }
+
+        int numberOfDeath { get; }
+
         bool IsGameFinished { get; }
 
         void StoreStatistics(string typeOfStatistics, int valuePipeLine);
 
-        void DisplayStats(int kills, int experience, int steps, int itemsCollected);
+        void DisplayStats(int kills, int experience, int steps, int itemsCollected, int death);
 
 
     }

@@ -16,10 +16,12 @@ namespace interfacek_ikt
 
         public int NumberOfStepsTaken { get; set; }
 
+
         public int ItemsCollected { get; set; }
 
         public bool IsGameFinished { get; set; }
 
+        public int numberOfDeath { get; set; }
 
         public void StoreStatistics(string typeOfStatistics, int valuePipeLine)
         {
@@ -37,6 +39,9 @@ namespace interfacek_ikt
                 case "collect":
                     ItemsCollected += 1;
                     break;
+                case "death":
+                    numberOfDeath++;
+                    break;
 
                 default:
                     Console.WriteLine($"Invalid type of statistics: {typeOfStatistics}");
@@ -44,13 +49,14 @@ namespace interfacek_ikt
             }
         }
 
-        public void DisplayStats(int kills, int experience, int steps, int itemsCollected)
+        public void DisplayStats(int kills, int experience, int steps, int itemsCollected, int death)
         {
             Console.WriteLine("\nStatistics:");
             Console.WriteLine($"Number of kills: {kills}");
             Console.WriteLine($"Experience points: {experience}");
             Console.WriteLine($"Number of steps taken: {steps}");
             Console.WriteLine($"Items collected: {itemsCollected}");
+            Console.WriteLine($"Number Of Deaths: {death}");
         }
 
         public Statistics()
