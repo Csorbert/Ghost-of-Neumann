@@ -93,7 +93,7 @@ namespace interfacek_ikt
 
                 Teleports.Add(mapnames[mapnumber], ftp);
             }
-
+            
             // Storing the map in matrix
 
             string[,] storemap = new string[25, 80];
@@ -181,7 +181,10 @@ namespace interfacek_ikt
             }
 
             string modified = $"{Player[0]},{Player[1]}";
-
+            if (StoreMap[Player[1], Player[0]] == "T")
+            {
+                StoreMap[Player[1], Player[0]] = " ";
+            }
             // If player coord is teleport
 
             string coord = $"{Player[1]+1},{Player[0]+1}";
