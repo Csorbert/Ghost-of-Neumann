@@ -185,7 +185,7 @@ namespace interfacek_ikt
             if (StoreMap[Player[1], Player[0]] == "T")
             {
                 StoreMap[Player[1], Player[0]] = " ";
-                itemsPickedUp++;
+                Program.statsCounter.ItemsCollected++;
                 Random rng = new Random();
                 int randomInt = rng.Next(2, 15);
 

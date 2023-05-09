@@ -9,7 +9,7 @@ namespace interfacek_ikt
 {
     class Program
     {
-        static Statistics statsCounter = new Statistics();
+        public static Statistics statsCounter = new Statistics();
 
         public static Map current;
 
@@ -62,7 +62,7 @@ namespace interfacek_ikt
                 current.Move(c);
 
                 statsCounter.StoreStatistics("step", 1);
-                statsCounter.DisplayStats(statsCounter.NumberOfKills, statsCounter.ExperiencePoints, statsCounter.NumberOfStepsTaken, current.itemsPickedUp, c);
+                statsCounter.DisplayStats(statsCounter.NumberOfKills, statsCounter.ExperiencePoints, statsCounter.NumberOfStepsTaken, statsCounter.ItemsCollected, c);
 
             }
 

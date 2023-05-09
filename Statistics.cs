@@ -38,9 +38,6 @@ namespace interfacek_ikt
                 case "step":
                     NumberOfStepsTaken += 1;
                     break;
-                case "collect":
-                    ItemsCollected += 1;
-                    break;
                 case "death":
                     numberOfDeath++;
                     break;
