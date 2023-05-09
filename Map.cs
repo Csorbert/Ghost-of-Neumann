@@ -120,6 +120,23 @@ namespace interfacek_ikt
             QTACoords.Add($"{qtay+1},{qtax+1}");
             storemap[qtay, qtax] = "╳";
 
+       
+            List<string> tCoords = new List<string>();
+
+            for (int i = 0; i < 3; i++)
+            {
+                int tx = rng.Next(0, 80);
+                int ty = rng.Next(0, 25);
+
+                while (storemap[ty, tx] != " ")
+                {
+                    tx = rng.Next(0, 80);
+                    ty = rng.Next(0, 25);
+                }
+
+                tCoords.Add($"{ty + 1},{tx + 1}");
+                storemap[ty, tx] = "T";
+            }
             // Set values
 
             FileName = filename;
