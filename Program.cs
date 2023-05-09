@@ -47,8 +47,8 @@ namespace interfacek_ikt
             string pos = $"{current.Player[0]},{current.Player[1]}";
             current.Update(pos, pos);
 
-            // statsCounter.StoreStatistics("step", 1);
-            // statsCounter.DisplayStats(statsCounter.NumberOfKills, statsCounter.ExperiencePoints, statsCounter.NumberOfStepsTaken, statsCounter.ItemsCollected);
+             statsCounter.StoreStatistics("step", 1);
+             statsCounter.DisplayStats(statsCounter.NumberOfKills, statsCounter.ExperiencePoints, statsCounter.NumberOfStepsTaken, statsCounter.ItemsCollected);
 
             // Console.WriteLine(current.QTACoords);
 
@@ -57,8 +57,8 @@ namespace interfacek_ikt
                 char c = Console.ReadKey(true).KeyChar;
                 current.Move(c);
 
-                // statsCounter.StoreStatistics("step", 1);
-                // statsCounter.DisplayStats(statsCounter.NumberOfKills, statsCounter.ExperiencePoints, statsCounter.NumberOfStepsTaken, statsCounter.ItemsCollected);
+                 statsCounter.StoreStatistics("step", 1);
+                 statsCounter.DisplayStats(statsCounter.NumberOfKills, statsCounter.ExperiencePoints, statsCounter.NumberOfStepsTaken, statsCounter.ItemsCollected);
             }
 
         }

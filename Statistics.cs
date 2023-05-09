@@ -49,7 +49,7 @@ namespace interfacek_ikt
             }
         }
 
-        public void DisplayStats(int kills, int experience, int steps, int itemsCollected, int death)
+        public void DisplayStats(int kills, int experience, int steps, int itemsCollected, int death = 0)
         {
             Console.WriteLine("\nStatistics:");
             Console.WriteLine($"Number of kills: {kills}");

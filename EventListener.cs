@@ -11,7 +11,6 @@ namespace interfacek_ikt
 {
     public class EventListener
     {
-
         // Ide jönnek majd a listenerek
 
         List<char> alphabet = new List<char>();
