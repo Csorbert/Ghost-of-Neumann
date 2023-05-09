@@ -284,8 +284,6 @@ namespace interfacek_ikt
             string[] to = toloc.Split(',');
             int[] tonum = { int.Parse(to[0]), int.Parse(to[1]) };
 
-            int y = Console.CursorTop;
-
             Console.SetCursorPosition(tonum[0],tonum[1]+1);
             Console.Write("X");
 

@@ -30,7 +30,7 @@ namespace interfacek_ikt
 
             // Initial QTA load
 
-            eventListener.CreateAlphabet();
+            eventListener.CreateQTA();
 
             // Wait for press
 
