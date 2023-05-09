@@ -180,12 +180,21 @@ namespace interfacek_ikt
                 default:
                     break;
             }
-
+            List<string> megszerzett = new List<string>();
             string modified = $"{Player[0]},{Player[1]}";
             if (StoreMap[Player[1], Player[0]] == "T")
             {
                 StoreMap[Player[1], Player[0]] = " ";
                 itemsPickedUp++;
+                Random rng = new Random();
+                int randomInt = rng.Next(2, 15);
+
+
+                string[] lines = File.ReadAllLines("tárgyak.txt", Encoding.Default);
+                string randomLine = lines[randomInt - 1];
+                megszerzett.Append(randomLine);
+                
+                
             }
             // If player coord is teleport
 
