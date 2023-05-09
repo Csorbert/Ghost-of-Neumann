@@ -71,33 +71,28 @@ namespace interfacek_ikt
             Console.SetCursorPosition(40 - 1, 13 - 1);
             Console.Write(character.ToString().ToUpper());
 
-            Console.SetCursorPosition(0, 25);
-
-            Console.WriteLine("\nPress: " + character);
-
             // Create async waiting task
 
             CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
             Task<string> task = Task.Run(() => WaitForInput(cancellationTokenSource.Token, timeReamining));
-            if (!task.Wait(timeToWait)) // Ran out of time
+            if (task.Result != null && character == task.Result.ToLower().ToCharArray()[0])
             {
-                string message = $"Fail";
-                Console.Write($"{message}{new string(' ', Console.WindowWidth - message.Length)}");
+                Console.ForegroundColor = ConsoleColor.Green;
+                string message = $"        S U C C E S S        ";
+                Console.SetCursorPosition(25, 12);
+                Console.Write(message);
+            } else
+            {
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                string message = $"           F A I L           ";
+                Console.SetCursorPosition(25, 12);
+                Console.Write(message);
                 cancellationTokenSource.Cancel();
             }
-            else  // Pressed something in time
-            {
-                if (character == task.Result.ToLower().ToCharArray()[0])
-                {
-                    string message = $"Success";
-                    Console.Write($"{message}{new string(' ', Console.WindowWidth - message.Length)}");
-                } else
-                {
-                    string message = $"Fail";
-                    Console.Write($"{message}{new string(' ', Console.WindowWidth - message.Length)}");
-                }
-            }
+
             Thread.Sleep(1000);
+
+            Console.ForegroundColor = ConsoleColor.White;
 
             string coord = $"{Program.current.Player[0]},{Program.current.Player[1]}";
             Program.current.DisplayMap();
@@ -106,28 +101,86 @@ namespace interfacek_ikt
 
         static string WaitForInput(CancellationToken cancellationToken, int timeToWait)
         {
-            // CSIRIBÚ CSIRIBÁ
+            // Set starter bar progress
+
+            Console.SetCursorPosition(25, 11);
+            string display = "#############################";
+            Console.Write(display);
+
+            // Set a timer unrelated from runtime
 
             StringBuilder sb = new StringBuilder();
             Stopwatch stopwatch = Stopwatch.StartNew();
+
             while (!cancellationToken.IsCancellationRequested && stopwatch.ElapsedMilliseconds < timeToWait)
             {
-                if (Console.KeyAvailable)
+                if (Console.KeyAvailable) // If console is still accessible
                 {
                     ConsoleKeyInfo keyInfo = Console.ReadKey(true);
                     sb.Append(keyInfo.KeyChar);
                     return sb.ToString();
                 }
 
-                Thread.Sleep(1);
-                
+                Thread.Sleep(3);
+
+                // Bar percentage calculator
+
                 int timeRemaining = (int)Math.Max(0, timeToWait - stopwatch.ElapsedMilliseconds);
-                Console.SetCursorPosition(0, 27);
-                string message = $"Time left: {timeRemaining} milliseconds";
-                Console.Write($"{message}{new string(' ', Console.WindowWidth - message.Length)}");
+                int percentage = (int)((float)timeRemaining / timeToWait * 100);
+
+                switch (percentage)
+                {
+                    case int p when p >= 92:
+                        display = "#############################"; break; // 29
+                    case int p when p >= 85:
+                        display = " ########################### "; break; // 27
+                    case int p when p >= 78:
+                        display = "  #########################  "; break; // 25
+                    case int p when p >= 71:
+                        display = "   #######################   "; break; // 23
+                    case int p when p >= 65:
+                        display = "    #####################    "; break; // 21
+                    case int p when p >= 58:
+                        display = "     ###################     "; break; // 19
+                    case int p when p >= 52:
+                        display = "      #################      "; break; // 17
+                    case int p when p >= 45:
+                        display = "       ###############       "; break; // 15
+                    case int p when p >= 39:
+                        display = "        #############        "; break; // 13
+                    case int p when p >= 32:
+                        display = "         ###########         "; break; // 11
+                    case int p when p >= 26:
+                        display = "          #########          "; break; // 9
+                    case int p when p >= 19:
+                        display = "           #######           "; break; // 7
+                    case int p when p >= 13:
+                        display = "            #####            "; break; // 5
+                    case int p when p >= 6:
+                        display = "             ###             "; break; // 3
+                    case int p:
+                        display = "              #              "; break; // 1
+                }
+
+                // Display bar progress
+
+                Console.SetCursorPosition(25, 11);
+                Console.Write(display);
+                Console.SetCursorPosition(25, 13);
+                Console.Write(display);
             }
+
+            // Completely remove the bar
+
+            Console.SetCursorPosition(25, 11);
+            Console.Write("                             ");
+            Console.SetCursorPosition(25, 13);
+            Console.Write("                             ");
+
             return null;
         }
+
+
 
     }
 }
