@@ -35,6 +35,7 @@ namespace interfacek_ikt
 
         public string[] Interactables => throw new NotImplementedException();
 
+        public int itemsPickedUp { get; private set; }
 
         public List<char> OOB { get; }
 
@@ -184,6 +185,7 @@ namespace interfacek_ikt
             if (StoreMap[Player[1], Player[0]] == "T")
             {
                 StoreMap[Player[1], Player[0]] = " ";
+                itemsPickedUp++;
             }
             // If player coord is teleport
 
