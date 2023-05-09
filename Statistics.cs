@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace interfacek_ikt
 {
@@ -24,6 +25,7 @@ namespace interfacek_ikt
         public int numberOfDeath { get; set; }
 
         bool isStatisticsOpen = false;
+        bool isInventoryOpen = false;
 
         public void StoreStatistics(string typeOfStatistics, int valuePipeLine)
         {
@@ -82,6 +84,7 @@ namespace interfacek_ikt
                         isStatisticsOpen = true;
 
                     }
+
                     else
                     {
                         string coord = $"{Program.current.Player[0]},{Program.current.Player[1]}";
@@ -98,7 +101,46 @@ namespace interfacek_ikt
             }
             
         }
+        public void DisplayInventory(char a)
+        {
+            switch (a)
+            {
+                case 'I':
+                case 'i':
+                    if (!isInventoryOpen)
+                    {
+                        Console.Clear();
+                        Console.WriteLine("#####################|Press I to continue|###########");
+                        Console.WriteLine("\nStatistics:");
+                        Console.WriteLine(Environment.NewLine);
+                        string[] lines = File.ReadAllLines("megszerezve.txt", Encoding.Default);
+                        
+                        foreach (var item in lines)
+                        {
+                            string [] sor = item.Split(';');
+                            Console.WriteLine(sor[0]);
+                            Console.WriteLine(Environment.NewLine);
+                        }
 
+                        Console.WriteLine("#####################################################");
+                        isInventoryOpen= true;
+
+                    }
+                    else
+                    {
+                        string coord = $"{Program.current.Player[0]},{Program.current.Player[1]}";
+                        Program.current.DisplayMap();
+                        Program.current.Update(coord, coord);
+                        isInventoryOpen = false;
+
+                    }
+
+                    break;
+                default:
+
+                    break;
+            }
+        }
         public Statistics()
         {
             NumberOfKills = 0;

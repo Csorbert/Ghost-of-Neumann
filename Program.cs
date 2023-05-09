@@ -28,6 +28,11 @@ namespace interfacek_ikt
 
             mapList.Add(current.FileName, current);
 
+            //megszerezve.txt clear 
+            StreamWriter sw = new StreamWriter("megszerezve.txt");
+            sw.Write("");
+            sw.Close();
+
             // Initial QTA load
 
             eventListener.CreateQTA();
@@ -38,11 +43,12 @@ namespace interfacek_ikt
             Console.WriteLine("Press a button to start\n");
             Console.WriteLine("Controls:");
             Console.WriteLine("\tStatistics - P ");
-
+            Console.WriteLine("\tStatistics - I ");
             Console.ReadKey();
             Console.Clear();
 
             Console.CursorVisible = false;
+
 
             // First map display and set player
 
@@ -63,7 +69,7 @@ namespace interfacek_ikt
 
                 statsCounter.StoreStatistics("step", 1);
                 statsCounter.DisplayStats(statsCounter.NumberOfKills, statsCounter.ExperiencePoints, statsCounter.NumberOfStepsTaken, statsCounter.ItemsCollected, c);
-
+                statsCounter.DisplayInventory(c);
             }
 
         }

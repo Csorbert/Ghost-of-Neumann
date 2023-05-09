@@ -193,8 +193,11 @@ namespace interfacek_ikt
                 string[] lines = File.ReadAllLines("tárgyak.txt", Encoding.Default);
                 string randomLine = lines[randomInt - 1];
                 megszerzett.Append(randomLine);
-                
-                
+
+                StreamWriter writer = new  StreamWriter("megszerezve.txt", true, Encoding.Default);
+
+                writer.WriteLine(randomLine);
+                writer.Close();
             }
             // If player coord is teleport
 
