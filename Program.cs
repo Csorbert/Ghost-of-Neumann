@@ -35,7 +35,10 @@ namespace interfacek_ikt
             // Wait for press
 
             Console.WriteLine("Press Alt + Enter to avoid bugs!\n");
-            Console.WriteLine("Press a button to start");
+            Console.WriteLine("Press a button to start\n");
+            Console.WriteLine("Controls:");
+            Console.WriteLine("\tStatistics - P ");
+
             Console.ReadKey();
             Console.Clear();
 
@@ -48,17 +51,19 @@ namespace interfacek_ikt
             current.Update(pos, pos);
 
              statsCounter.StoreStatistics("step", 1);
-             statsCounter.DisplayStats(statsCounter.NumberOfKills, statsCounter.ExperiencePoints, statsCounter.NumberOfStepsTaken, statsCounter.ItemsCollected);
+             //statsCounter.DisplayStats(statsCounter.NumberOfKills, statsCounter.ExperiencePoints, statsCounter.NumberOfStepsTaken, statsCounter.ItemsCollected);
 
             // Console.WriteLine(current.QTACoords);
 
             while (true)
             {
                 char c = Console.ReadKey(true).KeyChar;
+                
                 current.Move(c);
 
-                 statsCounter.StoreStatistics("step", 1);
-                 statsCounter.DisplayStats(statsCounter.NumberOfKills, statsCounter.ExperiencePoints, statsCounter.NumberOfStepsTaken, current.itemsPickedUp);
+                statsCounter.StoreStatistics("step", 1);
+                statsCounter.DisplayStats(statsCounter.NumberOfKills, statsCounter.ExperiencePoints, statsCounter.NumberOfStepsTaken, current.itemsPickedUp, c);
+
             }
 
         }

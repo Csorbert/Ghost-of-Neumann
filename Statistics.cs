@@ -23,6 +23,8 @@ namespace interfacek_ikt
 
         public int numberOfDeath { get; set; }
 
+        bool isStatisticsOpen = false;
+
         public void StoreStatistics(string typeOfStatistics, int valuePipeLine)
         {
             switch (typeOfStatistics)
@@ -49,14 +51,55 @@ namespace interfacek_ikt
             }
         }
 
-        public void DisplayStats(int kills, int experience, int steps, int itemsCollected, int death = 0)
+        public void DisplayStats(int kills, int experience, int steps, int itemsCollected, char o , int death = 0)
         {
-            Console.WriteLine("\nStatistics:");
-            Console.WriteLine($"Number of kills: {kills}");
-            Console.WriteLine($"Experience points: {experience}");
-            Console.WriteLine($"Number of steps taken: {steps}");
-            Console.WriteLine($"Items collected: {itemsCollected}");
-            Console.WriteLine($"Number Of Deaths: {death}");
+            switch (o){
+                case 'p':
+                case 'P':
+                    if (!isStatisticsOpen)
+                    {
+                        Console.Clear();
+                        Console.WriteLine("#####################|Press P to continue|###########");
+                        Console.WriteLine("\nStatistics:");
+                        Console.ForegroundColor = ConsoleColor.DarkRed;
+                        Console.WriteLine($"Number of kills: {kills}");
+                        Console.ForegroundColor = ConsoleColor.White;
+
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        Console.WriteLine($"Experience points: {experience}");
+                        Console.ForegroundColor = ConsoleColor.White;
+
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine($"Number of steps taken: {steps}");
+                        Console.ForegroundColor = ConsoleColor.White;
+
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine($"Items collected: {itemsCollected}");
+                        Console.ForegroundColor = ConsoleColor.White;
+
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine($"Number Of Deaths: {death}");
+                        Console.ForegroundColor = ConsoleColor.White;
+
+                        Console.WriteLine("#####################################################");
+                        isStatisticsOpen = true;
+
+                    }
+                    else
+                    {
+                        string coord = $"{Program.current.Player[0]},{Program.current.Player[1]}";
+                        Program.current.DisplayMap();
+                        Program.current.Update(coord, coord);
+                        isStatisticsOpen = false;
+
+                    }
+
+                    break;
+                default:
+                    
+                    break;
+            }
+            
         }
 
         public Statistics()

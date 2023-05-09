@@ -19,7 +19,7 @@ namespace interfacek_ikt
 
         void StoreStatistics(string typeOfStatistics, int valuePipeLine);
 
-        void DisplayStats(int kills, int experience, int steps, int itemsCollected, int death);
+        void DisplayStats(int kills, int experience, int steps, int itemsCollected, char o, int death=0);
 
 
     }
