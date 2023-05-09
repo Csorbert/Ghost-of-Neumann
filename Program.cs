@@ -61,7 +61,6 @@ namespace interfacek_ikt
                 
                 current.Move(c);
 
-                statsCounter.StoreStatistics("step", 1);
                 statsCounter.DisplayStats(statsCounter.NumberOfKills, statsCounter.ExperiencePoints, statsCounter.NumberOfStepsTaken, statsCounter.ItemsCollected, c);
 
             }

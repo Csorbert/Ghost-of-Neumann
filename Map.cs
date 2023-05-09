@@ -164,18 +164,23 @@ namespace interfacek_ikt
                 case 'w':
                 case 'W':
                     Player = new int[2] { Player[0], Player[1] - 1 };
+                    Program.statsCounter.StoreStatistics("step", 1);
                     break;
                 case 'a':
                 case 'A':
                     Player = new int[2] { Player[0] - 1, Player[1] };
+                    Program.statsCounter.StoreStatistics("step", 1);
                     break;
                 case 'd':
                 case 'D':
                     Player = new int[2] { Player[0] + 1, Player[1] };
+                    Program.statsCounter.StoreStatistics("step", 1);
                     break;
                 case 's':
                 case 'S':
                     Player = new int[2] { Player[0], Player[1] + 1 };
+                    Program.statsCounter.StoreStatistics("step", 1);
+
                     break;
                 default:
                     break;
