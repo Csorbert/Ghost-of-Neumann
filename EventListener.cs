@@ -84,13 +84,17 @@ namespace interfacek_ikt
                 string message = $"        S U C C E S S        ";
                 Console.SetCursorPosition(25, 12);
                 Console.Write(message);
+                Program.statsCounter.NumberOfKills++;
+                Program.statsCounter.ExperiencePoints += 100; //Később az ellenfelek implementálása során ToDO: az aktuális ellenfél tapasztalati pontjának átadása
             } else
             {
                 Console.ForegroundColor = ConsoleColor.DarkRed;
                 string message = $"           F A I L           ";
                 Console.SetCursorPosition(25, 12);
                 Console.Write(message);
+                Program.statsCounter.numberOfDeath++; //amint kész lesz a halál lehetősége
                 cancellationTokenSource.Cancel();
+
             }
 
             Thread.Sleep(1000);
