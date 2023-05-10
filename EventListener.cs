@@ -84,12 +84,9 @@ namespace interfacek_ikt
                 Console.SetCursorPosition(25, 12);
                 Console.Write(message);
                 Program.statsCounter.NumberOfKills++;
-<<<<<<< HEAD
                 Program.statsCounter.ExperiencePoints +=40;
 
-=======
-                Program.statsCounter.ExperiencePoints += 100; //Később az ellenfelek implementálása során ToDO: az aktuális ellenfél tapasztalati pontjának átadása
->>>>>>> 7dcae7d569c1a116ee0963e57d5e65f32a60fe05
+
             } else
             {
                 Console.ForegroundColor = ConsoleColor.DarkRed;

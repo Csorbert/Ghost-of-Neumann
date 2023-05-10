@@ -1,1 +1,2 @@
-2 támadásig felvehetõ mitzi magic álarc;pajzs;70%;2;false
+noggers csokiszelet;healelõ;20%;1;false
+shopból egy fullos életerõ regen;healelõ;100%;5;false
