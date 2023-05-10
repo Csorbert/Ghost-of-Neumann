@@ -185,26 +185,10 @@ namespace interfacek_ikt
                 default:
                     break;
             }
-            List<string> megszerzett = new List<string>();
+
             string modified = $"{Player[0]},{Player[1]}";
-            if (StoreMap[Player[1], Player[0]] == "T")
-            {
-                StoreMap[Player[1], Player[0]] = " ";
-                Program.statsCounter.ItemsCollected++;
-                Random rng = new Random();
-                int randomInt = rng.Next(2, 15);
 
-
-                string[] lines = File.ReadAllLines("tárgyak.txt", Encoding.Default);
-                string randomLine = lines[randomInt - 1];
-                megszerzett.Append(randomLine);
-
-                StreamWriter writer = new  StreamWriter("megszerezve.txt", true, Encoding.Default);
-
-                writer.WriteLine(randomLine);
-                writer.Close();
-            }
-            // If player coord is teleport
+            // If player coord is special
 
             string coord = $"{Player[1]+1},{Player[0]+1}";
 
@@ -267,7 +251,6 @@ namespace interfacek_ikt
             } else if (QTACoords.Contains(coord))
             {
                 Update(original, modified);
-
                 Program.eventListener.QuickTimeAction();
             }
             else
@@ -275,6 +258,27 @@ namespace interfacek_ikt
                 // Check for OOB
 
                 OutOfBounds(original, modified);
+
+                // Dávid kódja most ide jön ideiglenesen
+
+                List<string> megszerzett = new List<string>();
+                if (StoreMap[Player[1], Player[0]] == "T")
+                {
+                    StoreMap[Player[1], Player[0]] = " ";
+                    Program.statsCounter.ItemsCollected++;
+                    Random rng = new Random();
+                    int randomInt = rng.Next(2, 15);
+
+
+                    string[] lines = File.ReadAllLines("tárgyak.txt", Encoding.Default);
+                    string randomLine = lines[randomInt - 1];
+                    megszerzett.Append(randomLine);
+
+                    StreamWriter writer = new StreamWriter("megszerezve.txt", true, Encoding.Default);
+
+                    writer.WriteLine(randomLine);
+                    writer.Close();
+                }
 
                 // Update player pos
 

@@ -43,3 +43,13 @@ C:\Users\lukac\Desktop\Prog\jatekprojekt\Ghost-of-Neumann\obj\Debug\interfacek_i
 C:\Users\lukac\Desktop\Prog\jatekprojekt\Ghost-of-Neumann\obj\Debug\interfacek_ikt.pdb
 C:\Users\lukac\Desktop\progi\ikt projekt\Ghost-of-Neumann\obj\Debug\interfacek_ikt.csproj.SuggestedBindingRedirects.cache
 E:\Ghost-of-Neumann\bin\Debug\tárgyak.txt
+C:\Users\norbe\Desktop\Ghost-of-Neumann\bin\Debug\tárgyak.txt
+D:\2023\web\Ghost-of-Neumann\bin\Debug\tárgyak.txt
+D:\2023\web\Ghost-of-Neumann\bin\Debug\interfacek_ikt.exe.config
+D:\2023\web\Ghost-of-Neumann\bin\Debug\interfacek_ikt.exe
+D:\2023\web\Ghost-of-Neumann\bin\Debug\interfacek_ikt.pdb
+D:\2023\web\Ghost-of-Neumann\obj\Debug\interfacek_ikt.csproj.AssemblyReference.cache
+D:\2023\web\Ghost-of-Neumann\obj\Debug\interfacek_ikt.csproj.SuggestedBindingRedirects.cache
+D:\2023\web\Ghost-of-Neumann\obj\Debug\interfacek_ikt.csproj.CoreCompileInputs.cache
+D:\2023\web\Ghost-of-Neumann\obj\Debug\interfacek_ikt.exe
+D:\2023\web\Ghost-of-Neumann\obj\Debug\interfacek_ikt.pdb

@@ -16,6 +16,8 @@ namespace interfacek_ikt
         List<char> alphabet = new List<char>();
         string[,] template = new string[25, 80];
 
+        public static bool ActiveQTA;
+
         public void CreateQTA()
         {
             for (char c = 'a'; c <= 'z'; c++)
@@ -44,6 +46,8 @@ namespace interfacek_ikt
             int timeToWait = rnd.Next(500, 1500);
             int timeReamining = timeToWait;
             char character = alphabet[rnd.Next(0, alphabet.Count-1)];
+
+            ActiveQTA = true;
 
             // Display template
 
@@ -80,15 +84,21 @@ namespace interfacek_ikt
                 Console.SetCursorPosition(25, 12);
                 Console.Write(message);
                 Program.statsCounter.NumberOfKills++;
+<<<<<<< HEAD
                 Program.statsCounter.ExperiencePoints +=40;
 
+=======
+                Program.statsCounter.ExperiencePoints += 100; //Később az ellenfelek implementálása során ToDO: az aktuális ellenfél tapasztalati pontjának átadása
+>>>>>>> 7dcae7d569c1a116ee0963e57d5e65f32a60fe05
             } else
             {
                 Console.ForegroundColor = ConsoleColor.DarkRed;
                 string message = $"           F A I L           ";
                 Console.SetCursorPosition(25, 12);
                 Console.Write(message);
+                Program.statsCounter.numberOfDeath++; //amint kész lesz a halál lehetősége
                 cancellationTokenSource.Cancel();
+
             }
 
             Thread.Sleep(1000);
@@ -98,6 +108,8 @@ namespace interfacek_ikt
             string coord = $"{Program.current.Player[0]},{Program.current.Player[1]}";
             Program.current.DisplayMap();
             Program.current.Update(coord, coord);
+
+            ActiveQTA = false;
         }
 
         static string WaitForInput(CancellationToken cancellationToken, int timeToWait)
