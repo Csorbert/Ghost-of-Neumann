@@ -1,1 +1,1 @@
-energiaital;healelõ;75%;4;true
+kigyulladt vezeték;fegyver;80%;2;true

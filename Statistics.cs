@@ -141,6 +141,9 @@ namespace interfacek_ikt
                     break;
             }
         }
+
+       
+
         public Statistics()
         {
             NumberOfKills = 0;

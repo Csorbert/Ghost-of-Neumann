@@ -36,7 +36,6 @@ namespace interfacek_ikt
 
             r.Close();
         }
-
         public void QuickTimeAction()
         {
             // Create variables
@@ -80,6 +79,9 @@ namespace interfacek_ikt
                 string message = $"        S U C C E S S        ";
                 Console.SetCursorPosition(25, 12);
                 Console.Write(message);
+                Program.statsCounter.NumberOfKills++;
+                Program.statsCounter.ExperiencePoints +=40;
+
             } else
             {
                 Console.ForegroundColor = ConsoleColor.DarkRed;
