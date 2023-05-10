@@ -35,20 +35,21 @@ namespace interfacek_ikt
 
             // Initial QTA load
 
+            EventListener.ActiveQTA = false;
             eventListener.CreateQTA();
 
             // Wait for press
 
-            Console.WriteLine("Press Alt + Enter to avoid bugs!\n");
-            Console.WriteLine("Press a button to start\n");
-            Console.WriteLine("Controls:");
+            Console.WriteLine("Press Alt + Enter (or full screen) to avoid bugs!");
+            Console.WriteLine("\nControls:");
+            Console.WriteLine("\tMovement - W A S D ");
             Console.WriteLine("\tStatistics - P ");
-            Console.WriteLine("\tStatistics - I ");
+            Console.WriteLine("\tInventory - I ");
+            Console.Write("\nPress a button to start ");
             Console.ReadKey();
             Console.Clear();
 
             Console.CursorVisible = false;
-
 
             // First map display and set player
 
@@ -64,7 +65,7 @@ namespace interfacek_ikt
             while (true)
             {
                 char c = Console.ReadKey(true).KeyChar;
-                
+
                 current.Move(c);
 
                 statsCounter.DisplayStats(statsCounter.NumberOfKills, statsCounter.ExperiencePoints, statsCounter.NumberOfStepsTaken, statsCounter.ItemsCollected, c);

@@ -16,6 +16,8 @@ namespace interfacek_ikt
         List<char> alphabet = new List<char>();
         string[,] template = new string[25, 80];
 
+        public static bool ActiveQTA;
+
         public void CreateQTA()
         {
             for (char c = 'a'; c <= 'z'; c++)
@@ -45,6 +47,8 @@ namespace interfacek_ikt
             int timeToWait = rnd.Next(500, 1500);
             int timeReamining = timeToWait;
             char character = alphabet[rnd.Next(0, alphabet.Count-1)];
+
+            ActiveQTA = true;
 
             // Display template
 
@@ -96,6 +100,8 @@ namespace interfacek_ikt
             string coord = $"{Program.current.Player[0]},{Program.current.Player[1]}";
             Program.current.DisplayMap();
             Program.current.Update(coord, coord);
+
+            ActiveQTA = false;
         }
 
         static string WaitForInput(CancellationToken cancellationToken, int timeToWait)

@@ -58,7 +58,7 @@ namespace interfacek_ikt
                     if (!isStatisticsOpen)
                     {
                         Console.Clear();
-                        Console.WriteLine("#####################|Press P to continue|###########");
+                        Console.WriteLine("################|Press P to continue|################");
                         Console.WriteLine("\nStatistics:");
                         Console.ForegroundColor = ConsoleColor.DarkRed;
                         Console.WriteLine($"Number of kills: {kills}");
@@ -110,8 +110,8 @@ namespace interfacek_ikt
                     if (!isInventoryOpen)
                     {
                         Console.Clear();
-                        Console.WriteLine("#####################|Press I to continue|###########");
-                        Console.WriteLine("\nStatistics:");
+                        Console.WriteLine("################|Press I to continue|################");
+                        Console.WriteLine("\nInventory:");
                         Console.WriteLine(Environment.NewLine);
                         string[] lines = File.ReadAllLines("megszerezve.txt", Encoding.Default);
                         
