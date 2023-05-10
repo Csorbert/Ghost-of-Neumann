@@ -1,4 +1,1 @@
-<<<<<<< HEAD
-kigyulladt vezeték;fegyver;80%;2;true
-=======
->>>>>>> 7dcae7d569c1a116ee0963e57d5e65f32a60fe05
+2 támadásig felvehetõ mitzi magic álarc;pajzs;70%;2;false

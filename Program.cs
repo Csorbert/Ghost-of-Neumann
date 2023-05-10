@@ -71,10 +71,7 @@ namespace interfacek_ikt
                 statsCounter.DisplayStats(statsCounter.NumberOfKills, statsCounter.ExperiencePoints, statsCounter.NumberOfStepsTaken, statsCounter.ItemsCollected, c);
                 statsCounter.DisplayInventory(c);
 
-                if ()
-                {
 
-                }
             }
 
         }
