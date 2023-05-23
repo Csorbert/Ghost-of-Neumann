@@ -1,2 +1,0 @@
-noggers csokiszelet;healelõ;20%;1;false
-shopból egy fullos életerõ regen;healelõ;100%;5;false

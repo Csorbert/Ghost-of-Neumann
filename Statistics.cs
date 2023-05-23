@@ -53,8 +53,8 @@ namespace interfacek_ikt
         public void DisplayStats(int kills, int experience, int steps, int itemsCollected, char o , int death = 0)
         {
             switch (o){
-                case 'p':
                 case 'P':
+                case 'p':
                     if (!isStatisticsOpen)
                     {
                         Console.Clear();
@@ -82,7 +82,7 @@ namespace interfacek_ikt
 
                         Console.WriteLine("#####################################################");
                         isStatisticsOpen = true;
-
+                        Program.locked = true;
                     }
 
                     else
@@ -91,7 +91,7 @@ namespace interfacek_ikt
                         Program.current.DisplayMap();
                         Program.current.Update(coord, coord);
                         isStatisticsOpen = false;
-
+                        Program.locked = false;
                     }
 
                     break;
@@ -124,7 +124,7 @@ namespace interfacek_ikt
 
                         Console.WriteLine("#####################################################");
                         isInventoryOpen= true;
-
+                        Program.locked = true;
                     }
                     else
                     {
@@ -132,7 +132,7 @@ namespace interfacek_ikt
                         Program.current.DisplayMap();
                         Program.current.Update(coord, coord);
                         isInventoryOpen = false;
-
+                        Program.locked = false;
                     }
 
                     break;

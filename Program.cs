@@ -17,6 +17,8 @@ namespace interfacek_ikt
 
         public static Dictionary<string, Map> mapList = new Dictionary<string, Map>();
 
+        public static bool locked;
+
         static void Main(string[] args)
         {
 
@@ -37,6 +39,8 @@ namespace interfacek_ikt
 
             EventListener.ActiveQTA = false;
             eventListener.CreateQTA();
+
+            locked = false;
 
             // Wait for press
 
@@ -66,12 +70,13 @@ namespace interfacek_ikt
             {
                 char c = Console.ReadKey(true).KeyChar;
 
-                current.Move(c);
+                if (!locked)
+                {
+                    current.Move(c);
+                }
 
                 statsCounter.DisplayStats(statsCounter.NumberOfKills, statsCounter.ExperiencePoints, statsCounter.NumberOfStepsTaken, statsCounter.ItemsCollected, c);
                 statsCounter.DisplayInventory(c);
-
-
             }
 
         }

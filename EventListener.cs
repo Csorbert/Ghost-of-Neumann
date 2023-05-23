@@ -48,6 +48,7 @@ namespace interfacek_ikt
             char character = alphabet[rnd.Next(0, alphabet.Count-1)];
 
             ActiveQTA = true;
+            Program.locked = true;
 
             // Display template
 
@@ -85,8 +86,6 @@ namespace interfacek_ikt
                 Console.Write(message);
                 Program.statsCounter.NumberOfKills++;
                 Program.statsCounter.ExperiencePoints +=40;
-
-
             } else
             {
                 Console.ForegroundColor = ConsoleColor.DarkRed;
@@ -95,8 +94,9 @@ namespace interfacek_ikt
                 Console.Write(message);
                 Program.statsCounter.numberOfDeath++; //amint kész lesz a halál lehetősége
                 cancellationTokenSource.Cancel();
-
             }
+
+            // újra kell írni ezt az 1mp várakozást
 
             Thread.Sleep(1000);
 
@@ -107,6 +107,7 @@ namespace interfacek_ikt
             Program.current.Update(coord, coord);
 
             ActiveQTA = false;
+            Program.locked = false;
         }
 
         static string WaitForInput(CancellationToken cancellationToken, int timeToWait)
