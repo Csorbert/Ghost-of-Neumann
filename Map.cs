@@ -188,11 +188,18 @@ namespace interfacek_ikt
 
             string modified = $"{Player[0]},{Player[1]}";
 
-            // If player coord is special
+            // Coord modified to match visual matrix
 
             string coord = $"{Player[1]+1},{Player[0]+1}";
 
-            if (Coords.Contains(coord))
+            // Check for a coord difference
+
+            if (original == modified)
+            {
+                return;
+            }
+
+            if (Coords.Contains(coord)) // If player coord is a teleport coord
             {
                 foreach (var item in Teleports)
                 {
@@ -248,7 +255,8 @@ namespace interfacek_ikt
                         break;
                     }
                 }
-            } else if (QTACoords.Contains(coord))
+            }
+            else if (QTACoords.Contains(coord)) // If player coord is a Quick Time Action coord
             {
                 Update(original, modified);
                 Program.eventListener.QuickTimeAction();
@@ -285,6 +293,7 @@ namespace interfacek_ikt
                 modified = $"{Player[0]},{Player[1]}";
 
                 Update(original, modified);
+
             }
         }
 

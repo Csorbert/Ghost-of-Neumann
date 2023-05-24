@@ -55,7 +55,7 @@ namespace interfacek_ikt
             switch (o){
                 case 'P':
                 case 'p':
-                    if (!isStatisticsOpen)
+                    if (!isStatisticsOpen && !isInventoryOpen)
                     {
                         Console.Clear();
                         Console.WriteLine("################|Press P to continue|################");
@@ -84,8 +84,7 @@ namespace interfacek_ikt
                         isStatisticsOpen = true;
                         Program.locked = true;
                     }
-
-                    else
+                    else if (isStatisticsOpen)
                     {
                         string coord = $"{Program.current.Player[0]},{Program.current.Player[1]}";
                         Program.current.DisplayMap();
@@ -107,7 +106,7 @@ namespace interfacek_ikt
             {
                 case 'I':
                 case 'i':
-                    if (!isInventoryOpen)
+                    if (!isInventoryOpen && !isStatisticsOpen)
                     {
                         Console.Clear();
                         Console.WriteLine("################|Press I to continue|################");
@@ -126,7 +125,7 @@ namespace interfacek_ikt
                         isInventoryOpen= true;
                         Program.locked = true;
                     }
-                    else
+                    else if (isInventoryOpen)
                     {
                         string coord = $"{Program.current.Player[0]},{Program.current.Player[1]}";
                         Program.current.DisplayMap();

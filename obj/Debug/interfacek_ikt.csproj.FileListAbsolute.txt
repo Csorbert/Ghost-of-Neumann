@@ -53,3 +53,4 @@ D:\2023\web\Ghost-of-Neumann\obj\Debug\interfacek_ikt.csproj.SuggestedBindingRed
 D:\2023\web\Ghost-of-Neumann\obj\Debug\interfacek_ikt.csproj.CoreCompileInputs.cache
 D:\2023\web\Ghost-of-Neumann\obj\Debug\interfacek_ikt.exe
 D:\2023\web\Ghost-of-Neumann\obj\Debug\interfacek_ikt.pdb
+C:\Users\Norbi\Desktop\Ghost-of-Neumann\bin\Debug\tárgyak.txt
