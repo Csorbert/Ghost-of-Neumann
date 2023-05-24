@@ -96,9 +96,12 @@ namespace interfacek_ikt
                 cancellationTokenSource.Cancel();
             }
 
-            // újra kell írni ezt az 1mp várakozást
 
-            Thread.Sleep(1000);
+            cancellationTokenSource = new CancellationTokenSource();
+            Task<string> idolopas = Task.Run(() => IdoLopo(cancellationTokenSource.Token, 1000));
+            idolopas.Wait(1000);
+            cancellationTokenSource.Cancel();
+
 
             Console.ForegroundColor = ConsoleColor.White;
 
@@ -109,6 +112,8 @@ namespace interfacek_ikt
             ActiveQTA = false;
             Program.locked = false;
         }
+
+
 
         static string WaitForInput(CancellationToken cancellationToken, int timeToWait)
         {
@@ -193,5 +198,18 @@ namespace interfacek_ikt
 
 
 
+        static string IdoLopo(CancellationToken cancellationToken, int timeToWait)
+        {
+            Stopwatch stopwatch = Stopwatch.StartNew();
+            while (!cancellationToken.IsCancellationRequested && stopwatch.ElapsedMilliseconds < timeToWait)
+            {
+                if (Console.KeyAvailable)
+                {
+                    ConsoleKeyInfo keyInfo = Console.ReadKey(true); // ellopjuk az inputot
+                }
+                Thread.Sleep(1);
+            }
+            return null;
+        }
     }
 }
