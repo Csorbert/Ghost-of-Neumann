@@ -342,6 +342,7 @@ namespace interfacek_ikt
             if (OOB.Contains(char.Parse(StoreMap[tonum[1], tonum[0]])))
             {
                 Player = new int[2] { fromnum[0], fromnum[1] };
+                Program.statsCounter.StoreStatistics("step", -1);
             }
         }
     }

@@ -32,13 +32,13 @@ namespace interfacek_ikt
             switch (typeOfStatistics)
             {
                 case "kill":
-                    NumberOfKills += 1;
+                    NumberOfKills += valuePipeLine;
                     break;
                 case "xp":
                     ExperiencePoints += valuePipeLine;
                     break;
                 case "step":
-                    NumberOfStepsTaken += 1;
+                    NumberOfStepsTaken += valuePipeLine;
                     break;
                 case "death":
                     numberOfDeath++;
